@@ -9,7 +9,6 @@
   --accent-strong: #5a3a25;
   --accent-soft: #efe4d8;
   --gold: #b88a50;
-  --whatsapp: #1f9d58;
   --shadow: 0 24px 70px rgba(79, 45, 54, 0.16);
 }
 
@@ -137,24 +136,11 @@ h1 {
   outline: none;
 }
 
-.link.whatsapp {
-  border-color: rgba(31, 157, 88, 0.3);
-}
-
-.link.whatsapp .icon {
-  background: var(--whatsapp);
-  color: #fff;
-}
-
 .icon img {
   width: 42px;
   height: 42px;
   display: block;
   object-fit: contain;
-}
-
-.link.instagram .icon {
-  background: #fff;
 }
 
 .link strong,
@@ -181,7 +167,7 @@ h1 {
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: var(--accent-soft);
+  background: transparent;
   color: var(--accent-strong);
   font-size: 12px;
   font-weight: 800;
