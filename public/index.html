@@ -71,7 +71,8 @@
 
           <a
             class="link instagram"
-            href="https://www.instagram.com/viveemmim.camisetacatolica?igsh=ZXNncDY5ajVrdHNk"
+            href="https://www.instagram.com/viveemmim.camisetacatolica?igsh=MTIyZjJyejFvNGh1&utm_source=qr"
+            data-app-url="instagram://user?username=viveemmim.camisetacatolica"
             target="_blank"
             rel="noreferrer"
           >
@@ -90,5 +91,39 @@
         </footer>
       </section>
     </main>
+
+    <script>
+      const instagramLink = document.querySelector(".instagram[data-app-url]");
+
+      instagramLink?.addEventListener("click", (event) => {
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        if (!isMobile) {
+          return;
+        }
+
+        event.preventDefault();
+
+        const webUrl = instagramLink.href;
+        const appUrl = instagramLink.dataset.appUrl;
+        let openedApp = false;
+
+        const markAppOpened = () => {
+          openedApp = true;
+        };
+
+        document.addEventListener("visibilitychange", markAppOpened, {
+          once: true,
+        });
+
+        window.location.href = appUrl;
+
+        window.setTimeout(() => {
+          if (!openedApp) {
+            window.location.href = webUrl;
+          }
+        }, 900);
+      });
+    </script>
   </body>
 </html>
